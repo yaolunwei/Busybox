@@ -30,6 +30,9 @@ import static com.bigoat.busybox.log.Utils.checkNotNull;
 
 /**
  * Created by bigoat on 2018/8/25.
+ *
+ * 日志打印接口实现类 {@link Printer}
+ *
  */
 
 class LogPrinter implements Printer {
@@ -183,7 +186,6 @@ class LogPrinter implements Printer {
     public void addAdapter(@NonNull LogAdapter adapter) {
         logAdapters.add(checkNotNull(adapter));
     }
-
 
 
     /**

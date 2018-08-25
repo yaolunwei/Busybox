@@ -5,6 +5,9 @@ import android.support.annotation.Nullable;
 
 /**
  * Created by bigoat on 2018/8/25.
+ *
+ * 代理打印日志接口 {@link Log}
+ *
  */
 
 public interface Printer {

@@ -6,6 +6,9 @@ import android.support.annotation.Nullable;
 import static com.bigoat.busybox.log.Utils.checkNotNull;
 /**
  * Created by bigoat on 2018/8/25.
+ *
+ * 日志打印接口类
+ *
  */
 
 public final class Log {

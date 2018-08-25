@@ -5,6 +5,19 @@ import android.support.annotation.Nullable;
 
 /**
  * Created by bigoat on 2018/8/25.
+ *
+ * 日志打印适配器
+ *
+ * 安卓终端日志输出 {@link AndroidLogAdapter}
+ *
+ * 保存日志到磁盘 {@link DiskLogAdapter}
+ *
+ * 上传到服务器 {@link NetworkLogAdapter}
+ *
+ * 输出到指定的View或自定义View显示 {@link ViewLogAdapter}
+ *
+ * 内网广播日志 {@link BroadcastLogAdapter}
+ *
  */
 
 public interface LogAdapter {
