@@ -3,11 +3,11 @@ package com.bigoat.busybox.sample;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.bigoat.busybox.log.AndroidLogAdapter;
-import com.bigoat.busybox.log.DiskLogAdapter;
+import com.bigoat.busybox.log.adapter.AndroidLogAdapter;
+import com.bigoat.busybox.log.adapter.DiskLogAdapter;
 import com.bigoat.busybox.log.FormatStrategy;
 import com.bigoat.busybox.log.Log;
-import com.bigoat.busybox.log.PrettyFormatStrategy;
+import com.bigoat.busybox.log.format.PrettyFormatStrategy;
 
 import java.util.Arrays;
 import java.util.HashMap;

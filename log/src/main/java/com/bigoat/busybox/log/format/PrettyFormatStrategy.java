@@ -1,7 +1,14 @@
-package com.bigoat.busybox.log;
+package com.bigoat.busybox.log.format;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+
+import com.bigoat.busybox.log.FormatStrategy;
+import com.bigoat.busybox.log.Log;
+import com.bigoat.busybox.log.LogPrinter;
+import com.bigoat.busybox.log.LogStrategy;
+import com.bigoat.busybox.log.out.LogcatLogStrategy;
+import com.bigoat.busybox.log.Utils;
 
 import static com.bigoat.busybox.log.Utils.checkNotNull;
 

@@ -22,7 +22,7 @@ import static com.bigoat.busybox.log.Log.WARN;
  *
  */
 
-final class Utils {
+public final class Utils {
 
     private Utils() {
         // Hidden constructor.
@@ -34,7 +34,7 @@ final class Utils {
      * @param str the string to be examined
      * @return true if str is null or zero length
      */
-    static boolean isEmpty(CharSequence str) {
+    public static boolean isEmpty(CharSequence str) {
         return str == null || str.length() == 0;
     }
 
@@ -50,7 +50,7 @@ final class Utils {
      * NOTE: Logic slightly change due to strict policy on CI -
      * "Inner assignments should be avoided"
      */
-    static boolean equals(CharSequence a, CharSequence b) {
+    public static boolean equals(CharSequence a, CharSequence b) {
         if (a == b) return true;
         if (a != null && b != null) {
             int length = a.length();
@@ -96,7 +96,7 @@ final class Utils {
         return sw.toString();
     }
 
-    static String logLevel(int value) {
+    public static String logLevel(int value) {
         switch (value) {
             case VERBOSE:
                 return "VERBOSE";
@@ -152,7 +152,8 @@ final class Utils {
         return "Couldn't find a correct type for the object";
     }
 
-    @NonNull static <T> T checkNotNull(@Nullable final T obj) {
+    @NonNull
+    public static <T> T checkNotNull(@Nullable final T obj) {
         if (obj == null) {
             throw new NullPointerException();
         }

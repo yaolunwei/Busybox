@@ -1,4 +1,4 @@
-package com.bigoat.busybox.log;
+package com.bigoat.busybox.log.format;
 
 import android.os.Environment;
 import android.os.Handler;
@@ -6,12 +6,18 @@ import android.os.HandlerThread;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.bigoat.busybox.log.out.DiskLogStrategy;
+import com.bigoat.busybox.log.FormatStrategy;
+import com.bigoat.busybox.log.LogStrategy;
+import com.bigoat.busybox.log.Utils;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 import static com.bigoat.busybox.log.Utils.checkNotNull;
+
 
 /**
  * CSV formatted file logging for Android.

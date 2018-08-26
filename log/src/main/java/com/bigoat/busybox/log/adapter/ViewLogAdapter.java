@@ -1,7 +1,9 @@
-package com.bigoat.busybox.log;
+package com.bigoat.busybox.log.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+
+import com.bigoat.busybox.log.LogAdapter;
 
 /**
  * Created by bigoat on 2018/8/26.

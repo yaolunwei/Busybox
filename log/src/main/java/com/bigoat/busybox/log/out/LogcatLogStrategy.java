@@ -1,8 +1,10 @@
-package com.bigoat.busybox.log;
+package com.bigoat.busybox.log.out;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
+
+import com.bigoat.busybox.log.LogStrategy;
 
 import static com.bigoat.busybox.log.Utils.checkNotNull;
 

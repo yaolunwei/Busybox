@@ -35,7 +35,7 @@ import static com.bigoat.busybox.log.Utils.checkNotNull;
  *
  */
 
-class LogPrinter implements Printer {
+public class LogPrinter implements Printer {
 
     private static final int JSON_INDENT = 2;
 

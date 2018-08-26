@@ -1,10 +1,12 @@
-package com.bigoat.busybox.log;
+package com.bigoat.busybox.log.out;
 
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+
+import com.bigoat.busybox.log.LogStrategy;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -34,13 +36,13 @@ public class DiskLogStrategy implements LogStrategy {
     handler.sendMessage(handler.obtainMessage(level, message));
   }
 
-  static class WriteHandler extends Handler {
+  public static class WriteHandler extends Handler {
 
     @NonNull
     private final String folder;
     private final int maxFileSize;
 
-    WriteHandler(@NonNull Looper looper, @NonNull String folder, int maxFileSize) {
+    public WriteHandler(@NonNull Looper looper, @NonNull String folder, int maxFileSize) {
       super(checkNotNull(looper));
       this.folder = checkNotNull(folder);
       this.maxFileSize = maxFileSize;

@@ -3,6 +3,9 @@ package com.bigoat.busybox.log;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.bigoat.busybox.log.out.DiskLogStrategy;
+import com.bigoat.busybox.log.out.LogcatLogStrategy;
+
 /**
  * Determines destination target for the logs such as Disk, Logcat etc.
  *
