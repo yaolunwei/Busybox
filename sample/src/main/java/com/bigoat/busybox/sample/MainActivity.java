@@ -1,13 +1,25 @@
 package com.bigoat.busybox.sample;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.TextView;
 
+import com.bigoat.busybox.log.MyFloatView;
 import com.bigoat.busybox.log.adapter.AndroidLogAdapter;
 import com.bigoat.busybox.log.adapter.DiskLogAdapter;
 import com.bigoat.busybox.log.FormatStrategy;
 import com.bigoat.busybox.log.Log;
+import com.bigoat.busybox.log.adapter.ViewLogAdapter;
 import com.bigoat.busybox.log.format.PrettyFormatStrategy;
+import com.bigoat.busybox.log.format.ViewFormatStrategy;
+import com.bigoat.busybox.log.out.ViewLogStrategy;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -26,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
         Log.addLogAdapter(new AndroidLogAdapter());
         Log.d("message");
-
         Log.clearLogAdapters();
 
 
@@ -37,20 +48,14 @@ public class MainActivity extends AppCompatActivity {
 //        .logStrategy(customLog) // (Optional) Changes the log strategy to print out. Default LogCat
                 .tag("My custom tag")   // (Optional) Custom tag for each log. Default PRETTY_LOGGER
                 .build();
-
         Log.addLogAdapter(new AndroidLogAdapter(formatStrategy));
-
         Log.addLogAdapter(new AndroidLogAdapter() {
             @Override public boolean isLoggable(int priority, String tag) {
                 return BuildConfig.DEBUG;
             }
         });
-
         Log.addLogAdapter(new DiskLogAdapter());
-
-
         Log.w("no thread info and only 1 method");
-
         Log.clearLogAdapters();
         formatStrategy = PrettyFormatStrategy.newBuilder()
                 .showThreadInfo(false)
@@ -59,19 +64,13 @@ public class MainActivity extends AppCompatActivity {
 
         Log.addLogAdapter(new AndroidLogAdapter(formatStrategy));
         Log.i("no thread info and method info");
-
         Log.t("tag").e("Custom tag for only one use");
-
         Log.json("{ \"key\": 3, \"value\": something}");
-
         Log.d(Arrays.asList("foo", "bar"));
-
         Map<String, String> map = new HashMap<>();
         map.put("key", "value");
         map.put("key1", "value2");
-
         Log.d(map);
-
         Log.clearLogAdapters();
         formatStrategy = PrettyFormatStrategy.newBuilder()
                 .showThreadInfo(false)
@@ -79,7 +78,31 @@ public class MainActivity extends AppCompatActivity {
                 .tag("MyTag")
                 .build();
         Log.addLogAdapter(new AndroidLogAdapter(formatStrategy));
-
         Log.w("my log message with my tag");
+
+        ViewLogAdapter viewLogAdapter = new ViewLogAdapter(getApplication());
+        Log.clearLogAdapters();
+        Log.addLogAdapter(viewLogAdapter);
+        for (int i=0; i<100; i++) {
+            Log.d("This log out of view("+i+")");
+        }
+
+
+//        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+//        intent.setData(Uri.parse("package:" + getPackageName()));
+//        startActivityForResult(intent, 100);
+
+
+
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    public void addLog(View view) {
+        Log.d("add Log ");
     }
 }

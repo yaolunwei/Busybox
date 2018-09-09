@@ -7,7 +7,8 @@ import com.bigoat.busybox.log.format.CsvFormatStrategy;
 import com.bigoat.busybox.log.FormatStrategy;
 import com.bigoat.busybox.log.LogAdapter;
 
-import static android.support.v4.util.Preconditions.checkNotNull;
+import static com.bigoat.busybox.log.Utils.checkNotNull;
+
 
 /**
  * This is used to saves log messages to the disk.

@@ -1,5 +1,6 @@
 package com.bigoat.busybox.log.adapter;
 
+import android.annotation.SuppressLint;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
@@ -21,6 +22,7 @@ public class AndroidLogAdapter implements LogAdapter {
         this.formatStrategy = PrettyFormatStrategy.newBuilder().build();
     }
 
+    @SuppressLint("RestrictedApi")
     public AndroidLogAdapter(@NonNull FormatStrategy formatStrategy) {
         this.formatStrategy = checkNotNull(formatStrategy);
     }
