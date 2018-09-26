@@ -1,10 +1,30 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.8.1'
+    }
+}
+
+publish {
+    repoName = 'maven'          //远程仓库名字,不指明，默认是上传到maven
+    userOrg = 'bigoat'       //bintray.com用户名
+    groupId = 'com.bigoat'       //jcenter上的路径,bintray上创建Package时填写的Version control项
+    artifactId = 'busybox'      //项目名称，bintray上创建Package时填写的Name项
+    publishVersion = '0.0.5'    //版本号
+    desc = 'This is my android utils.'      //描述，不重要
+    website = 'https://blog.bigoat.com/busybox'     //网站，最好有，不重要
+}
 
 android {
     compileSdkVersion 28
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
@@ -22,8 +42,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.yaolunwei:android:0.0.2'
 }
+
+// ./gradlew clean build bintrayUpload -PbintrayUser=bigoat -PbintrayKey=03eec37cffe6790b5462501e874e89e9dc70820c -PdryRun=false
+

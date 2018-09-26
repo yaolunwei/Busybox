@@ -1,25 +1,15 @@
 package com.bigoat.busybox.sample;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.TextView;
 
-import com.bigoat.busybox.log.MyFloatView;
 import com.bigoat.busybox.log.adapter.AndroidLogAdapter;
 import com.bigoat.busybox.log.adapter.DiskLogAdapter;
 import com.bigoat.busybox.log.FormatStrategy;
 import com.bigoat.busybox.log.Log;
 import com.bigoat.busybox.log.adapter.ViewLogAdapter;
 import com.bigoat.busybox.log.format.PrettyFormatStrategy;
-import com.bigoat.busybox.log.format.ViewFormatStrategy;
-import com.bigoat.busybox.log.out.ViewLogStrategy;
 
 import java.util.Arrays;
 import java.util.HashMap;
